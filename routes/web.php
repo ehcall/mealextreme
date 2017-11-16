@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/add', function(){
-	return view('add');
-});
+Route::view('/welcome','welcome')->name('welcome');
+Route::resource('recipes', 'RecipeController');
+
+	
+
