@@ -15,9 +15,9 @@ class RecipeController extends Controller
     {
         
 		//return view('welcome');
-       $recipes = Recipe::orderBy('updated_at','DESC')->paginate(20);
+       $recipes = Recipe::orderBy('updated_at','DESC')->paginate(10);
 
-       return view('welcome',compact('recipes'));
+       return view('recipes.index',compact('recipes'));
     }
 
     /**
@@ -50,7 +50,7 @@ class RecipeController extends Controller
 		]);
 		
 		Recipe::create($request->all());
-		return redirect()->route('welcome')
+		return redirect()->route('recipes.index')
 						->with('success','Recipe added successfully');
     }
 

@@ -7,15 +7,7 @@
         </div>
 
 		<a href="{{ route('recipes.create') }}" class="btn btn-info btn-block" >Add a Recipe</a>
-		<div class="title m-b-md">
-			My Recipes
-		</div>
-		@if($recipes->count())  
-			@foreach($recipes as $recipe)
-			{{$recipe->recipe_name}}<br/>
-			@endforeach 
-		@else
-			<p>No recipes found!</p>
-		@endif
+		<a href="{{ route('recipes.index') }}" class="btn btn-info btn-block" >View Recipes</a>
+		
     </div>
 @endsection
